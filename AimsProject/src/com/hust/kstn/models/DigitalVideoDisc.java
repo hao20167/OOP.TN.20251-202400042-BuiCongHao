@@ -1,37 +1,31 @@
 package com.hust.kstn.models;
 
 public class DigitalVideoDisc {
+	private static int nbDigitalVideoDiscs = 0;
 	private String id, title, category, director;
 	private int length;
 	private float cost;
 	private int quantity;
 	
-	public DigitalVideoDisc() {}
+	public DigitalVideoDisc() { id = Integer.toString(++nbDigitalVideoDiscs); }
 	public DigitalVideoDisc(String title) {
+		this();
 		this.title = title;
 		this.quantity = 1;
 	}
 	public DigitalVideoDisc(String category, String title, float cost) {
+		this(title);
 		this.category = category;
-		this.title = title;
 		this.cost = cost;
-		this.quantity = 1;
 	}
 	public DigitalVideoDisc(String director, String category, String title, float cost) {
+		this(category, title, cost);
 		this.director = director;
-		this.category = category;
-		this.title = title;
-		this.cost = cost;
-		this.quantity = 1;
 	}
 	public DigitalVideoDisc(String id, String title, String category, String director, int length, float cost, int quantity) {
+		this(director, category, title, cost);
 		this.id = id;
-		this.title = title;
-		this.category = category;
-		this.director = director;
 		this.length = length;
-		this.cost = cost;
-		this.cost = cost;
 		this.quantity = quantity;
 	}
 	

@@ -111,7 +111,7 @@ public class Cart {
 			int qty = item.getQuantity();
 			float cost = item.getCost();
 			float total = cost * qty;
-			System.out.println("[Title]: " + item.getTitle() + ", [Quantity]: " + qty + ", [Cost]: " + cost + "/DVD, [Total]: " + total);
+			System.out.println("[ID]: " + item.getId() + ", [Title]: " + item.getTitle() + ", [Quantity]: " + qty + ", [Cost]: " + cost + "/DVD, [Total]: " + total);
 		}
 		System.out.println("==============================");
 	}

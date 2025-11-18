@@ -33,5 +33,11 @@ public class Aims {
 		cart.clearCart();
 		
 		cart.removeDVD(dvd1);
+		
+		DigitalVideoDisc dvd3 = new DigitalVideoDisc("BUI", "Animation", "KING KONG", 67f);
+		cart.addDVD(dvd3);
+		
+		cart.print();
+		System.out.println("[Current Total Cost]: " + cart.calculateTotalCost());
 	}
 }
