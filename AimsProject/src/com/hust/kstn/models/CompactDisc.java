@@ -3,11 +3,16 @@ package com.hust.kstn.models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CompactDisc extends Media {
+public class CompactDisc extends Disc {
 	private List<Track> tracks = new ArrayList<>();
 	
+	public CompactDisc(String title, float cost, String category) {
+		super(title, cost, category);
+	}
+	
 	public CompactDisc(List<Track> tracks, String id, String title, float cost, String category) {
-		super(id, title, cost, category);
+		this(title, cost, category);
+		super.setId(id);
 		this.tracks = tracks;
 	}
 	
