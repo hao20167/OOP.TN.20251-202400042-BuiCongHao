@@ -52,7 +52,7 @@ public class Cart {
 			}
 		}
 		if (found == -1) {
-			System.out.println("The disc [" + disc.getTitle() + "] does not exist!!!");
+			System.out.println("Can not find the disc [" + disc.getTitle() + "] in the cart, can not remove!!!");
 			return;
 		}
 		for (int i = found + 1; i < qtyOrdered; i++)
@@ -100,19 +100,23 @@ public class Cart {
 	}
 
 	public void print() {
+		if (qtyOrdered == 0) {
+			System.out.println("The cart is empty!");
+			return;
+		}
 		int totQty = 0;
 		for (int i = 0; i < qtyOrdered; i++) {
 			totQty += itemsInCart[i].getQuantity();
 		}
-		System.out.println("=== Total items in cart: " + totQty + " ===");
-		System.out.println("== All items in cart ===");
+		System.out.println("======================= THE CURRENT CART =======================");
+		System.out.println("Total items: [" + totQty + "]");
+		float subtotal = 0;
 		for (int i = 0; i < qtyOrdered; i++) {
 			DigitalVideoDisc item = itemsInCart[i];
-			int qty = item.getQuantity();
-			float cost = item.getCost();
-			float total = cost * qty;
-			System.out.println("[ID]: " + item.getId() + ", [Title]: " + item.getTitle() + ", [Quantity]: " + qty + ", [Cost]: " + cost + "/DVD, [Total]: " + total);
+			System.out.println("- " + item.toString());
+			subtotal += item.getCost() * item.getQuantity();
 		}
-		System.out.println("==============================");
+		System.out.println("Subtotal: [" + subtotal + "]$");
+		System.out.println("================================================================");
 	}
 }

@@ -56,4 +56,11 @@ public class DigitalVideoDisc {
 	public void playDemo() {
 		// TODO
 	}
+	
+	@Override
+	public String toString() {
+//		float total = cost * quantity;
+//		return "[ID]: " + id + ", [Title]: " + title + ", [Cost]: " + cost + "/DVD, [Total]: " + total + ", [Length]: " + length + ", [Category]: " + category + ", [Director]: " + director);
+		return "DVD" + "[" + id + "]" + " - [" + title + "]" + " - [" + cost + "]" + " - [" + director + "]" + " - [" + length + "]" + " - [" + category + "]";
+	}
 }
