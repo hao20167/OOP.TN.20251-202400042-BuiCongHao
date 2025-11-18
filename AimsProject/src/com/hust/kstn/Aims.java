@@ -28,9 +28,10 @@ public class Aims {
 		}
 		
 		cart.print();
-		System.out.println("[Current Total Cost]: " + cart.calculateTotalCost());
+//		System.out.println("[Current Total Cost]: " + cart.calculateTotalCost());
 		
 		cart.clearCart();
+		cart.print();
 		
 		cart.removeDVD(dvd1);
 		
@@ -38,6 +39,6 @@ public class Aims {
 		cart.addDVD(dvd3);
 		
 		cart.print();
-		System.out.println("[Current Total Cost]: " + cart.calculateTotalCost());
+//		System.out.println("[Current Total Cost]: " + cart.calculateTotalCost());
 	}
 }
